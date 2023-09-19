@@ -26,28 +26,6 @@ class CategoryService {
             .singleOrNull()
     }
 
-    fun addCategory(post: Category): Category = transaction {
-        CategoryTable.insert {
-            it[name] = post.name
-        }.resultedValues!!.first().toCategory()
-    }
-
-    fun updateCategory(post: Category): Category {
-        val id = post.id ?: throw IllegalArgumentException("Id is null")
-        return run {
-            transaction {
-                CategoryTable.update({ CategoryTable.id eq id }) {
-                    it[CategoryTable.name] = post.name
-                }
-                getCategory(id)!!
-            }
-        }
-    }
-
-    fun deleteCategory(id: Int): Boolean = transaction {
-        CategoryTable.deleteWhere { CategoryTable.id eq id } > 0
-    }
-
     private fun ResultRow.toCategory(): Category =
         Category(
             id = this[CategoryTable.id],
