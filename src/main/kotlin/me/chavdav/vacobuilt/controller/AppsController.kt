@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.*
 class AppsController() {
     @GetMapping("/", produces = [MediaTypes.HAL_JSON_VALUE, MediaType.APPLICATION_JSON_VALUE])
     @ResponseBody
-    fun helloWorld(): ResponseEntity<Any?> {return ResponseEntity("Hello World", HttpStatus.OK)
+    fun helloWorld(): ResponseEntity<Any?> {
+        return ResponseEntity("Hello World", HttpStatus.OK)
     }
 }

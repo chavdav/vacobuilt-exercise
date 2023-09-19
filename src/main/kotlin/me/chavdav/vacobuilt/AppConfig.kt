@@ -8,15 +8,10 @@ import org.jetbrains.exposed.sql.DatabaseConfig
 @Configuration
 class AppConfig {
 
-    val db =        Database.connect(
-            "jdbc:postgresql://localhost:5432/test",
-            driver = "org.postgresql.Driver",
-            user = "postgres",
-            password = "postgres"
-        )
-
-    @Bean
-    fun databaseConfig() : DatabaseConfig {
-        return DatabaseConfig()
-    }
+    val db = Database.connect(
+        "jdbc:postgresql://localhost:5432/test",
+        driver = "org.postgresql.Driver",
+        user = "postgres",
+        password = "postgres"
+    )
 }

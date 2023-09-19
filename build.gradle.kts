@@ -26,6 +26,7 @@ dependencies {
     implementation("org.jetbrains.exposed:exposed-core:0.42.1")
     implementation("org.jetbrains.exposed:exposed-dao:0.42.1")
     implementation("org.jetbrains.exposed:exposed-jdbc:0.42.1")
+    implementation("org.jetbrains.exposed:exposed-java-time:0.42.1")
     implementation("org.flywaydb:flyway-core:9.20.0")
 
     testImplementation("org.springframework.boot:spring-boot-starter-test") {
