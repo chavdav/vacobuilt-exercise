@@ -50,8 +50,8 @@ class PostService(
         return run {
             transaction {
                 PostTable.update({ PostTable.id eq id }) {
-                    it[PostTable.title] = title
-                    it[PostTable.contents] = contents
+                    it[PostTable.title] = post.title
+                    it[PostTable.contents] = post.contents
                     it[PostTable.categoryId] = post.categoryId
                 }
             }
